@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+{% block content %}
+    <!-- shop-details Area Start-->
+    <div class="shop-details-area pd-top-100">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="sticy-product">
+                        <div class="product-thumbnail-wrapper">
+                            <img src="{{ plato.imagen.url }}" alt="item">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="shop-item-details">                    
+                        <h2 class="entry-title">{{ plato.nombre}}</h2>
+                        <div class="row">
+                            <div class="col-lg-6 align-self-center">
+                                <h4 class="price">${{ plato.precio}}</h4>
+                            </div>                            
+                        </div>   
+                        <p class="mt-4">Pizza is a savory dish of Italian origin consisting of a usually round, flattened base of leavened wheat-based dough topped with tomatoes, cheese, and often various other ingredients, which is then baked at a high temperature, traditionally in a wood-fired oven. A small pizza is sometimes called a pizzetta.</p>    
+                        
+                            <input class="form-control text-center me-3" id="inputQuantity" type="num" value="1" style="max-width: 3rem" />
+                        <a href="{% url 'web:agregarCarrito' plato.id %}" class="btn btn-secondary">AGREGAR AL CARRITO</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+{% endblock %}
